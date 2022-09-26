@@ -93,6 +93,7 @@
     cursor: pointer;
     letter-spacing: 2px;
     transition: all 0.2s;
+    text-decoration: none;
 }
 
 .list a:hover {

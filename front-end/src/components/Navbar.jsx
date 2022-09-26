@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightToBracket, faHeart, faShoppingBag, faUser } from '@fortawesome/free-solid-svg-icons'
 import '../styles/navbar.css'
+import { NavLink } from 'react-router-dom'
 
 
 const Navbar = () => {
@@ -12,6 +13,7 @@ const Navbar = () => {
             <div className="n-row">
                 <div className="n-col">
                     <span className='n-email'>ricpewebcode@gmail.com</span>
+                    <span><FontAwesomeIcon icon={faUser} />Guest</span>
                 </div>
                 <div className="n-col">
                     <div className="socials">
@@ -24,23 +26,23 @@ const Navbar = () => {
             </div>
             <div className="n-row">
                 <div className="n-col">
-                    <img src="/images/logo/logo.png" className='logo' alt="" />
+                    <a href="/"><img src="/images/logo/logo.png" className='logo' alt="" /></a>
                 </div>
                 <div className="n-col">
                     <div className="icons">
-                        <span> <FontAwesomeIcon icon={faArrowRightToBracket} /> Login</span>
-                        <span><FontAwesomeIcon icon={faHeart} />Wish</span>
-                        <span><FontAwesomeIcon icon={faShoppingBag} />Cart</span>
+                        <a href="/login"> <span> <FontAwesomeIcon icon={faArrowRightToBracket} /> Login</span></a>
+                        <a href="/wish"><span><FontAwesomeIcon icon={faHeart} />Wish</span></a>
+                        <a href="/cart"><span><FontAwesomeIcon icon={faShoppingBag} />Cart</span></a>
                     </div>
                 </div>
             </div>
             <div className="n-row">
                 <nav className="nav">
                     <ul className="items">
-                        <li className="list"><a href="/" activeClassName="active">Home</a></li>
-                        <li className="list"><a href="/shop" activeClassName="active">Shop</a></li>
-                        <li className="list"><a href="/about" activeClassName="active">About</a></li>
-                        <li className="list"><a href="/contact" activeClassName="active">Contact</a></li>
+                        <li className="list"><NavLink to="/" activeClassName="active">Home</NavLink></li>
+                        <li className="list"><NavLink to="/shop" activeClassName="active">Shop</NavLink></li>
+                        <li className="list"><NavLink to="/about" activeClassName="active">About</NavLink></li>
+                        <li className="list"><NavLink to="/contact" activeClassName="active">Contact</NavLink></li>
                     </ul>
                     <button className='btn'>BTN</button>
                 </nav>
