@@ -1,9 +1,11 @@
 import { faEye, faHeart, faShoppingBag } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/producthome.css'
+import Quick from './Quick'
 
 const ProductHome = ({ item }) => {
+    const [open, setOpen] = useState(false);
     return (
         <div className='hp-card'>
             <div className="card-header">
@@ -14,10 +16,11 @@ const ProductHome = ({ item }) => {
                 <span>${item.price}</span>
             </div>
             <div className="card-footer">
-                <button><FontAwesomeIcon icon={faEye} /></button>
+                <button onClick={() => setOpen(true)} className="eye"><FontAwesomeIcon icon={faEye} /></button>
                 <button><FontAwesomeIcon icon={faHeart} /></button>
                 <button><FontAwesomeIcon icon={faShoppingBag} /></button>
             </div>
+            {open && <Quick item={item} />}
         </div>
     )
 }

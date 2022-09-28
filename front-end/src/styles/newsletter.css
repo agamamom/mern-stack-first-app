@@ -6,9 +6,6 @@
     background-color: #0000000a;
 }
 
-.new-row {
-
-}
 
 .new-title {
     font-size: 70px;
@@ -63,7 +60,7 @@
     .new-title {
         font-size: 30px;
     }
-    
+
     .new-desc {
         font-size: 12px;
     }
